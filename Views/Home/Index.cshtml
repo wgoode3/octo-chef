@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Recipe>
+
+<div class="row">
+    @foreach (var recipe in Model)
+    {    
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    @recipe.Title
+                </div>
+                <div class="card-body">
+                    <ul>
+                        @foreach (var ingredient in recipe.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+                    <pre>@recipe.Instructions</pre>
+                </div>
+            </div>
+        </div>
+    }
+</div>
